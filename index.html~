@@ -5,7 +5,7 @@
 	
 		<meta charset="utf-8">
 	
-		<title>DevLabs USB - Tarea 2</title>  
+		<title>DevLabs USB - Tarea 3</title>  
 		<meta name="description" content="">
 	  	<meta name="author" content="">
 	  
@@ -22,12 +22,12 @@
 		<script type="text/javascript">
 		
 		var preguntas = new Array();
-		preguntas[0] = "<p>&iquestQu&eacute problema resuelven las herramientas virtualenv y RVM (o rbenv)? &iquestPara qu&eacute lenguaje se utiliza cada una? si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?</p>";
-		preguntas[1] = "<p>&iquestQu&eacute framework piensas usar?</p>";
-		preguntas[2] = "<p>&iquestQu&eacute patr&oacuten de dise&ntildeo utiliza ese framework? </p>";
-		preguntas[3] = "<p>En el framework seleccionado, &iquestc&oacutemo se crea la relaci&oacuten entre las tablas de la base de datos y las clases definidas?</p>";
-		preguntas[4] = "<p>&iquestPara que se utilizan PIP y Bundler?, si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?</p>";
-		preguntas[5] = "<p>&iquestQu&eacute es un Requirements file y un Gemfile? &iquestPara qu&eacute los usar&iacuteas en una aplicaci&oacuten?</p>";
+		preguntas[0] = "&iquestQu&eacute problema resuelven las herramientas virtualenv y RVM (o rbenv)? &iquestPara qu&eacute lenguaje se utiliza cada una? si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?";
+		preguntas[1] = "&iquestQu&eacute framework piensas usar?";
+		preguntas[2] = "&iquestQu&eacute patr&oacuten de dise&ntildeo utiliza ese framework?";
+		preguntas[3] = "En el framework seleccionado, &iquestc&oacutemo se crea la relaci&oacuten entre las tablas de la base de datos y las clases definidas?";
+		preguntas[4] = "&iquestPara que se utilizan PIP y Bundler?, si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?";
+		preguntas[5] = "&iquestQu&eacute es un Requirements file y un Gemfile? &iquestPara qu&eacute los usar&iacuteas en una aplicaci&oacuten?";
 		
 		var respuestas = new Array();
 		respuestas[0] = "<p>Ambas herramientas permiten trabajar con diferentes entornos virtuales en una misma estaci&oacuten de trabajo, lo que resulta de gran utilidad a la hora de desarrollar distintos proyectos al mismo tiempo.</p>"
