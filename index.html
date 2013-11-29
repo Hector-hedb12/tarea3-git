@@ -5,7 +5,7 @@
 	
 		<meta charset="utf-8">
 	
-		<title>DevLabs USB - Tarea 3</title>
+		<title>DevLabs USB - Tarea 3</title>  
 		<meta name="description" content="">
 	  	<meta name="author" content="">
 	  
@@ -26,22 +26,26 @@
 		preguntas[1] = "&iquestQu&eacute framework piensas usar?";
 		preguntas[2] = "&iquestQu&eacute patr&oacuten de dise&ntildeo utiliza ese framework?";
 		preguntas[3] = "En el framework seleccionado, &iquestc&oacutemo se crea la relaci&oacuten entre las tablas de la base de datos y las clases definidas?";
-		preguntas[4] = "&iquestPara que se utilizan PIP y Bundler?, si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?";
+		preguntas[4] = "&iquestPara qu&eacute se utilizan PIP y Bundler?, si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje? ";
 		preguntas[5] = "&iquestQu&eacute es un Requirements file y un Gemfile? &iquestPara qu&eacute los usar&iacuteas en una aplicaci&oacuten?";
 		
 		var respuestas = new Array();
 		respuestas[0] = "<p>Ambas herramientas permiten trabajar con diferentes entornos virtuales en una misma estaci&oacuten de trabajo, lo que resulta de gran utilidad a la hora de desarrollar distintos proyectos al mismo tiempo.</p>"
-                             + "<p>Por ejemplo, digamos que nos encontramos desarrollando una aplicaci&oacuten A, que requiere el uso de un paquete P versi&oacuten 1.1; pero sin haber terminado la aplicaci&oacuten anterior, comienza el desarrollo de una aplicaci&oacuten B, que requiere el uso del mismo paquete, pero en su versi&oacuten 2.1. Ante esta situaci&oacuten, necesitamos tener instaladas ambas versiones del paquete P en nuestra computadora para poder llevar a cabo el desarrollo de ambos proyectos y para ello, necesitamos trabajar con distintos entornos virtuales, uno para cada versi&oacuten. </p>"
-                             + "<p>Ahora bien, VirtualEnv y RVM son herramientas que nos permiten gestionar estos entornos. VirtualEnv es utilizada para ambientes de desarrollo Python mientras que RVM es utilizado para Ruby.</p>";
-		respuestas[1] = "<p>Django (Python)</p>";
-		respuestas[2] = "<p>Model-View-Controller (MVC)</p>";
-		respuestas[3] = "<p>Para crear la relaci&oacuten primero se debe editar el archivo models.py, generado por python. En este archivo se define una clase por cada tabla, que debe ser subclase de django.db.models.Model.</p>";
-		respuestas[4] = "<p>...</p>";
-		respuestas[5] = "<p>...</p>";
+		              + "<p>Por ejemplo, digamos que nos encontramos desarrollando una aplicaci&oacuten <code>A</code>, que requiere el uso de un paquete <code>P</code> versi&oacuten 1.1; pero sin haber terminado la aplicaci&oacuten anterior, comienza el desarrollo de una aplicaci&oacuten <code>B</code>, que requiere el uso del mismo paquete, pero en su versi&oacuten 2.1.</p>"
+					  + "<p>Ante esta situaci&oacuten, necesitamos tener instaladas ambas versiones del paquete P en nuestra computadora para poder llevar a cabo el desarrollo de ambos proyectos y para ello, necesitamos trabajar con distintos entornos virtuales, uno para cada versi&oacuten. </p>"
+					  + "<p>Ahora bien, VirtualEnv y RVM son herramientas que nos permiten gestionar estos entornos. VirtualEnv es utilizada para ambientes de desarrollo Python mientras que RVM es utilizado para Ruby.</p>";
+		respuestas[1] = "<p>Django (Python).</p>";
+		respuestas[2] = "<p>Model-View-Controller (MVC).</p>";
+		respuestas[3] = "<p>Para crear la relaci&oacuten primero se debe editar el archivo <code>models.py</code>, generado por python luego de correr <code>python manage.py startapp 'proyecto'</code> (esto crea una estructura de directorios).</p>"
+		              + "<p>En este archivo se define una clase por cada tabla del modelo, que debe ser subclase de <code>django.db.models.Model</code>. Cada variable dentro de estas clases representar&aacute una columna en la tabla de la base de datos, estas variables son una instancia de <code>models.Field</code>, por ejemplo: <code>models.CharField</code> para caracteres.</p>"
+					  + "<p>A partir de este archivo, Django es capaz de crear un esquema de base de datos para esta aplicaci&oacuten y adem&aacutes, crear un API de acceso a los datos para acceder a las tablas, luego de ejecutar <code>manage.py syncdb</code>. Este comando revisa los modelos disponibles y crea las tablas correspondientes en la base de datos si no exist&iacutean previamente &iquestC&oacutemo? revisando la variable <code>INSTALLED_APPS</code> y creando las tablas necesarias de acuerdo a la configuraci&oacuten de base de datos registrada en el archivo <code>settings.py</code> (en este archivo se define el backend de la base de datos a utilizar - mysql, sqlite3, entre otros - el nombre, el usuario y clave de acceso a la base de datos y otras configuraciones).</p>";
+		respuestas[4] = "<p>PIP es una herramienta para instalar y administrar paquetes Python. Mientras que Bundler es un 'gem' que nos permite a partir de un fichero (Gemfile), definir los 'gem' que nuestro proyecto utilizar&aacute y en caso de no estar instalada, entonces se instalar&aacute automaticamente. Un 'gem' es algo similar a una librer&iacutea o biblioteca.</p>";
+		respuestas[5] = "<p>Requirements file es un archivo en el que se listan los paquetes (con sus respectivas versiones) que requiere una librer&iacutea, biblioteca o proyecto. Todo lo especificado en este archivo puede ser instalado con PIP (Python) por medio del siguiente comando: <code>pip install &ndash;r requirements.txt</code>.</p>"
+		              + "<p>An&aacutelogamente, un Gemfile es un archivo que lista los 'gem' (con sus versiones) que se deben incluir en un proyecto Ruby.  Este archivo es utilizado por Bundler para cargar, instalar o actualizar los 'gem' necesarios.</p>"
+					  + "<p>Ambos archivos son utilizados frecuentemente para, en conjunto con las herramientas PIP y Bundler, simplificar la distribuci&oacuten de c&oacutedigo.</p>";
 
 		// Initial call
 		$(document).ready(function(){
-			
 			$("#pagination").jPaginator({ 
 				nbPages:6,
 				marginPx:5,
@@ -54,7 +58,6 @@
 					$("#page").html("<center> Pregunta "+num + "</br>" + preguntas[num-1] + " </center> " + respuestas[num-1]); 
 				} 
 			});
-			
 		});
 		 
 		</script>
@@ -71,9 +74,10 @@
 	
 			<div id="pagination" style="width: 250px; margin: auto;"> 
 			
-				<!-- optional left control buttons
+				<!-- optional left control buttons 					
 				<a class="control" id="max_backward"></a>
-				<a class="control" id="over_backward"></a>-->
+				<a class="control" id="over_backward"></a> -->
+
 				<div class='paginator_p_wrap'> 
 				
 					<div class='paginator_p_bloc'> 
@@ -82,16 +86,16 @@
 					
 				</div> 
 
-				<!-- optional right control buttons
+				<!-- optional right control buttons 
 				<a class="control" id="over_forward"></a>
-				<a class="control" id="max_forward"></a>-->
+				<a class="control" id="max_forward"></a> -->
 
-				<!-- slider
+				<!-- slider 
 				<div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'> 
 					
 					<a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a> 
 					
-				</div> -->
+				</div>--> 
 				
 			</div>
 			
