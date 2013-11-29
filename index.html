@@ -1,1 +1,106 @@
-hola, hola
+<!DOCTYPE html>
+<html lang="en">
+<!-- acento: &acute; &iquest; &ntilde -->
+	<head>
+	
+		<meta charset="utf-8">
+	
+		<title>DevLabs USB - Tarea 2</title>  
+		<meta name="description" content="">
+	  	<meta name="author" content="">
+	  
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="jquery-ui-1.8.13.slider.min.js"></script>
+		<script src="jPaginator-min.js"></script>
+	
+		<style type="text/css" media="all">
+			@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400italic&v2);
+			@import url(jPaginator.css);
+			@import url(custom.css);		
+		</style>
+		
+		<script type="text/javascript">
+		
+		var preguntas = new Array();
+		preguntas[0] = "<p>&iquestQu&eacute problema resuelven las herramientas virtualenv y RVM (o rbenv)? &iquestPara qu&eacute lenguaje se utiliza cada una? si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?</p>";
+		preguntas[1] = "<p>&iquestQu&eacute framework piensas usar?</p>";
+		preguntas[2] = "<p>&iquestQu&eacute patr&oacuten de dise&ntildeo utiliza ese framework? </p>";
+		preguntas[3] = "<p>En el framework seleccionado, &iquestc&oacutemo se crea la relaci&oacuten entre las tablas de la base de datos y las clases definidas?</p>";
+		preguntas[4] = "<p>&iquestPara que se utilizan PIP y Bundler?, si no utilizas python o ruby, &iquestcu&aacutel ser&iacutea la alternativa para tu lenguaje?</p>";
+		preguntas[5] = "<p>&iquestQu&eacute es un Requirements file y un Gemfile? &iquestPara qu&eacute los usar&iacuteas en una aplicaci&oacuten?</p>";
+		
+		var respuestas = new Array();
+		respuestas[0] = "<p>Ambas herramientas permiten trabajar con diferentes entornos virtuales en una misma estaci&oacuten de trabajo, lo que resulta de gran utilidad a la hora de desarrollar distintos proyectos al mismo tiempo.</p>"
+                             + "<p>Por ejemplo, digamos que nos encontramos desarrollando una aplicaci&oacuten A, que requiere el uso de un paquete P versi&oacuten 1.1; pero sin haber terminado la aplicaci&oacuten anterior, comienza el desarrollo de una aplicaci&oacuten B, que requiere el uso del mismo paquete, pero en su versi&oacuten 2.1. Ante esta situaci&oacuten, necesitamos tener instaladas ambas versiones del paquete P en nuestra computadora para poder llevar a cabo el desarrollo de ambos proyectos y para ello, necesitamos trabajar con distintos entornos virtuales, uno para cada versi&oacuten. </p>"
+                             + "<p>Ahora bien, VirtualEnv y RVM son herramientas que nos permiten gestionar estos entornos. VirtualEnv es utilizada para ambientes de desarrollo Python mientras que RVM es utilizado para Ruby.</p>";
+		respuestas[1] = "<p>Django (Python)</p>";
+		respuestas[2] = "<p>Model-View-Controller (MVC)</p>";
+		respuestas[3] = "<p>Para crear la relaci&oacuten primero se debe editar el archivo models.py, generado por python. En este archivo se define una clase por cada tabla, que debe ser subclase de django.db.models.Model.</p>";
+		respuestas[4] = "<p>...</p>";
+		respuestas[5] = "<p>...</p>";
+
+		// Initial call
+		$(document).ready(function(){
+			
+			$("#pagination").jPaginator({ 
+				nbPages:6,
+				marginPx:5,
+				length:8, 
+				overBtnLeft:'#over_backward', 
+				overBtnRight:'#over_forward', 
+				maxBtnLeft:'#max_backward', 
+				maxBtnRight:'#max_forward', 
+				onPageClicked: function(a,num) { 
+					$("#page").html("<center> Pregunta "+num + "</br>" + preguntas[num-1] + " </center> " + respuestas[num-1]); 
+				} 
+			});
+			
+		});
+		 
+		</script>
+	
+	</head>
+	
+	<body>
+	
+		<header> <h1>DevLabs__UCB/UCAB</h1> </header>
+	  
+		<div id="container">
+		
+			<!--include a div which we'll use to illustrate jPaginator doing its job-->
+	
+			<div id="pagination" style="width: 250px; margin: auto;"> 
+			
+				<!-- optional left control buttons
+				<a class="control" id="max_backward"></a>
+				<a class="control" id="over_backward"></a>-->
+				<div class='paginator_p_wrap'> 
+				
+					<div class='paginator_p_bloc'> 
+						<!--<div class='paginator_p'></div> // page number : dynamically added --> 
+					</div> 
+					
+				</div> 
+
+				<!-- optional right control buttons
+				<a class="control" id="over_forward"></a>
+				<a class="control" id="max_forward"></a>-->
+
+				<!-- slider
+				<div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'> 
+					
+					<a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a> 
+					
+				</div> -->
+				
+			</div>
+			
+			</br></br></br></br></br></br>
+			<div id="page"></div>
+					
+		</div>
+	
+	</body>
+
+</html>
+
