@@ -1,0 +1,15 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'is_up_me/style.css' %}" />
+
+<header> <h1>DevLabs</h1> </header>
+
+<p>Ingrese URL</p>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'is_up_me:consultar' 'consulta' %}" method="post">
+{% csrf_token %}
+<input type="text" name="url_text" id="url_text" value="" />
+<input type="submit" value="Consultar" />
+</form>
